@@ -4,6 +4,8 @@ import tseslint from "typescript-eslint";
 import { defineConfig, globalIgnores } from "eslint/config";
 
 export default defineConfig([
+  tseslint.configs.recommended,
+
   globalIgnores(["node_modules/", "dist/", "build/", ".env", "*.local"]),
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
@@ -11,5 +13,10 @@ export default defineConfig([
     extends: ["js/recommended"],
     languageOptions: { globals: globals.browser },
   },
-  tseslint.configs.recommended,
+  {
+    rules: {
+      "no-undef": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+    },
+  },
 ]);
