@@ -17,6 +17,7 @@ export default defineConfig([
     rules: {
       "no-undef": "off",
       "@typescript-eslint/no-explicit-any": "off",
+      "no-unused-vars": "off",
     },
   },
 ]);
